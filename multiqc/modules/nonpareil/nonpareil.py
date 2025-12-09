@@ -291,13 +291,13 @@ class MultiqcModule(BaseMultiqcModule):
         }
 
         pconfig = {
-            "id": "nonpareil-table",
+            "id": f"{self.anchor}_table",
             "title": "Nonpareil: statistics",
         }
 
         self.add_section(
             name="Statistics",
-            anchor="nonpareil-table-section",
+            anchor="nonpareil_table",
             description="""
             Nonpareil uses the redundancy of the reads in metagenomic datasets to
             estimate the average coverage and predict the amount of sequences that
@@ -369,7 +369,7 @@ class MultiqcModule(BaseMultiqcModule):
                         )
 
         pconfig = {
-            "id": "nonpareil-redundancy-plot",
+            "id": f"{self.anchor}_redundancy_plot",
             "colors": data_colors,
             "title": "Nonpareil: Redundancy levels",
             "xlab": "Sequencing effort (Mbp)",
@@ -387,7 +387,7 @@ class MultiqcModule(BaseMultiqcModule):
 
         self.add_section(
             name="Redundancy levels",
-            anchor="nonpareil-redundancy",
+            anchor="nonpareil_redundancy",
             description="Observed and modelled redundancy levels across samples.",
             helptext="""
             The estimation of the Redundancy is at the core of Nonpareil,
